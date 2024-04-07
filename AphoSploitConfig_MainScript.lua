@@ -7,8 +7,8 @@ local function createNotification()
     local notification = Instance.new("TextLabel")
     notification.Name = "AphoSploitNotification"
     notification.Text = "AphoSploit loaded! Press RIGHTSHIFT to open menu."
-    notification.Size = UDim2.new(0, 200, 0, 50) -- Size of the notification
-    notification.Position = UDim2.new(1, -220, 1, -70) -- Position it to the bottom right corner
+    notification.Size = UDim2.new(0, 300, 0, 50) -- Size of the notification
+    notification.Position = UDim2.new(1, -320, 1, -70) -- Position it to the bottom right corner
     notification.BackgroundColor3 = Color3.fromRGB(30, 30, 30) -- Dark background color
     notification.TextColor3 = Color3.new(1, 1, 1) -- White text color
     notification.Font = Enum.Font.SourceSansSemibold
@@ -20,7 +20,7 @@ local function createNotification()
     notification.Parent = gui
 
     -- Animate notification to fade out after 1 second
-    wait(1)
+    wait(3)
     notification:TweenSize(UDim2.new(0, 0, 0, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Linear, 0.5, true)
     wait(0.5)
     notification:Destroy()
@@ -104,7 +104,12 @@ local hacks = {
                         end
                     end
                 end
-            end, Keybind = Enum.KeyCode.E}
+            end, Keybind = Enum.KeyCode.E},
+            {Text = "red skybox", Function = function()
+                -- Set Skybox to red
+                game.Lighting.Ambient = Color3.fromRGB(255, 0, 0) -- Red Ambient light
+                game.Lighting.OutdoorAmbient = Color3.fromRGB(255, 0, 0) -- Red Outdoor Ambient light
+            end, Keybind = Enum.KeyCode.K}
         }
     }
 }
