@@ -40,7 +40,7 @@ local hacks = {
             end, Keybind = Enum.KeyCode.F},
             {Text = "Speed", Function = function()
                 -- Increase player speed
-                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 2
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 5
             end, Keybind = Enum.KeyCode.S}
         }
     },
