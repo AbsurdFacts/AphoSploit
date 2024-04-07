@@ -94,7 +94,7 @@ local hacks = {
                 for _, player in ipairs(game.Players:GetPlayers()) do
                     if player ~= game.Players.LocalPlayer then
                         local distance = (player.Character.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
-                        if distance <= 100 then
+                        if distance <= 100000000 then
                             local esp = Instance.new("BoxHandleAdornment")
                             esp.Adornee = player.Character.HumanoidRootPart
                             esp.Size = Vector3.new(5, 5, 5)  -- Increase the size of the ESP box
