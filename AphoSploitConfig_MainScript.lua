@@ -6,7 +6,7 @@ gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 local function createNotification()
     local notification = Instance.new("TextLabel")
     notification.Name = "AphoSploitNotification"
-    notification.Text = "AphoSploit loaded! Press RIGHTSHIFT to open menu."
+    notification.Text = "AphoSploit loaded"
     notification.Size = UDim2.new(0, 200, 0, 50) -- Size of the notification
     notification.Position = UDim2.new(1, -220, 1, -70) -- Position it to the bottom right corner
     notification.BackgroundColor3 = Color3.fromRGB(30, 30, 30) -- Dark background color
@@ -65,7 +65,11 @@ local hacks = {
                     freeCam.CFrame = CFrame.new(humanoidRootPart.Position + offset)
                     wait()
                 end
-            end, Keybind = Enum.KeyCode.C}
+            end, Keybind = Enum.KeyCode.C},
+            {Text = "FOV", Function = function()
+                -- Change Field of View to 120
+                game.Workspace.CurrentCamera.FieldOfView = 120
+            end, Keybind = Enum.KeyCode.V}
         }
     },
     {
@@ -84,7 +88,23 @@ local hacks = {
                     -- Teleport the player to the clicked location
                     player.Character:SetPrimaryPartCFrame(CFrame.new(location.p))
                 end
-            end, Keybind = Enum.KeyCode.T}
+            end, Keybind = Enum.KeyCode.T},
+            {Text = "ESP", Function = function()
+                -- Function to display ESP
+                for _, player in ipairs(game.Players:GetPlayers()) do
+                    if player ~= game.Players.LocalPlayer then
+                        local distance = (player.Character.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+                        if distance <= 100 then
+                            local esp = Instance.new("BoxHandleAdornment")
+                            esp.Adornee = player.Character.HumanoidRootPart
+                            esp.Size = Vector3.new(5, 5, 5)  -- Increase the size of the ESP box
+                            esp.Color3 = Color3.fromRGB(255, 0, 0)
+                            esp.Transparency = 0.5
+                            esp.Parent = player.Character.HumanoidRootPart
+                        end
+                    end
+                end
+            end, Keybind = Enum.KeyCode.E}
         }
     }
 }
