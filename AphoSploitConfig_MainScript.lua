@@ -40,7 +40,7 @@ local hacks = {
             end, Keybind = Enum.KeyCode.F},
             {Text = "Speed", Function = function()
                 -- Increase player speed
-                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 18
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 10
             end, Keybind = Enum.KeyCode.S}
         }
     },
@@ -68,7 +68,7 @@ local hacks = {
             end, Keybind = Enum.KeyCode.C},
             {Text = "FOV", Function = function()
                 -- Change Field of View to 120
-                game.Workspace.CurrentCamera.FieldOfView = 120
+                game.Workspace.CurrentCamera.FieldOfView = 150
             end, Keybind = Enum.KeyCode.V}
         }
     },
