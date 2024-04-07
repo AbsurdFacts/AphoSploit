@@ -5,4 +5,5 @@ We have Ragdoll Speed Teleport And one more! But it is in Alpha so fly doesnt wo
 ## Who was is made by?
 This client was made by AbsurdFacts! aka. Aphoon_best Which is me :skull:, and ive gotten over 2+ accounts banned from Roblox Bedwars XD.
 # Update Log
+v2: Added FOV And ESP!
 v1: Release
